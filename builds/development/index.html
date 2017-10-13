@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>day #</title>
+    <!-- <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="css/anotherstyle.css"> -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script language="javascript">
+        angular
+            .module('firstApplication', ['ngMaterial'])
+            .controller('switchController', switchController);
+
+        function switchController($scope) {
+            $scope.data = {
+                switch1: true,
+                switch2: false,
+                switch3: false,
+                switch4: true,
+                switch5: true,
+                switch6: false
+            };
+
+            $scope.message = 'false';
+            $scope.onChange = function(state) {
+                $scope.message = state;
+            };
+        }
+    </script>
+</head>
+
+<body ng-app="firstApplication">
+    <div id="switchContainer" ng-controller="switchController as ctrl" layout="column" ng-cloak>
+        <md-switch ng-model="data.switch1" aria-label="Switch 1">
+            Switch 1: {{ data.switch1 }}
+        </md-switch>
+
+        <md-switch ng-model="data.switch2" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
+            Switch 2 (md-warn): {{ data.switch2 }}
+        </md-switch>
+
+        <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
+            Switch 3 (Disabled)
+        </md-switch>
+
+        <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="data.switch4">
+            Switch 4 (Disabled, Active)
+        </md-switch>
+
+        <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.switch5">
+            Switch 5 (md-primary): No Ink
+        </md-switch>
+
+        <md-switch ng-model="data.switch6" aria-label="Switch 6" ng-change="onChange(data.switch6)">
+            Switch 6 : {{ message }}
+        </md-switch>
+    </div>
+</body>
+
+</html>

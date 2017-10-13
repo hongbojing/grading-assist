@@ -1,0 +1,228 @@
+/******Reset the style******/
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, th, td
+{
+    margin: 0; padding: 0; border: 0; outline: none;
+}
+html{
+    font-size:100.01%;
+}
+body
+{
+    line-height: 1;
+    font-size: 1em;
+    font-weight: 400;
+    background: #FDFDFD;
+}
+html, body, form, fieldset {
+    font: 100%/120% Verdana, Arial, Helvetica, sans-serif;
+
+}
+p, ul, ol, li, a, span, blockquote {
+    font-size: 1em;
+}
+input, select, textarea {
+    font-size: 100%;
+    font-family: inherit;
+}
+h1, h2, h3, h4, h5, h6, p, pre,
+blockquote, ul, ol, dl, address {
+    margin: 1em 0;
+    padding: 0;
+}
+li, dd, blockquote {
+    margin-left: 1em;
+}
+p{
+    line-height: 1.4;
+    color: #333333;
+    text-indent: 2em;
+    letter-spacing: 0.7px;
+}
+form label {
+    cursor: pointer;
+}
+fieldset {
+    border: none;
+}
+ul, ol
+{
+    list-style: none;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+.left
+{
+    float: left;
+    padding: .5em .5em .5em 0;
+}
+.right
+{
+    float: right;
+    padding: .5em 0 .5em .5em;
+}
+/******Reset the style******end******/
+
+
+/****** container ******/
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 768px){
+    .container{
+        width: 100%;
+    }
+    p{
+        width: 60%;
+
+    }
+}
+@media(min-width:992px){
+    .container{
+        width:100%;
+    }
+    p{
+        width: 60%;
+    }
+}
+@media(min-width: 1200px){
+    .container{
+        width: 100%;
+    }
+    p{
+        width: 60%;
+    }
+}
+.row{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-md-90, .col-md-80, .col-md-70, .col-md-60, .col-md-50, .col-md-40, .col-md-30, .col-md-20, .col-md-10{
+    position:relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.col-md-10{
+    width: 10%;
+}
+.col-md-20{
+    width: 20%;
+}
+.col-md-30{
+    width: 30%;
+}
+.col-md-40{
+    width: 40%;
+}
+.col-md-50{
+    width: 50%;
+}
+.col-md-60{
+    width: 60%;
+}
+.col-md-70{
+    width: 70%;
+}
+.col-md-80{
+    width: 80%;
+}
+.col-md-90{
+    width: 90%;
+}
+/****** container ****** end *****/
+
+/*to center*/
+.center{
+    border: solid #0A5599;
+    margin: 0.7em auto;
+    padding: 1em;
+}
+/*center end*/
+
+/*to clear float for a specific element*/
+.no-float {
+    float: none;
+}
+/*end of clear float*/
+
+
+/*to clear float in the parent element*/
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+/* For IE 6/7 (triggers hasLayout) */
+.cf {
+    zoom:1;
+}
+/*end clear float for the parent element*/
+
+/*button*/
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 5px;
+    text-align: center;
+    text-indent: 0;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 2px 5px 2px 5px;
+    transition: .3s background-color;
+}
+a.btn{
+    text-decoration: none;
+}
+.btn-orange{
+    border: 2px solid #F27839;
+    color: #F27839;
+}
+.btn-orange:hover{
+    color: #ffffff;
+    background: #F27839;
+}
+.btn-dp-orange{
+    border: 2px solid #FF4A00;
+    color: #FF4A00;
+}
+.btn-dp-orange:hover{
+    color: #ffffff;
+    background: #FF4A00;
+}
+.btn-blue{
+    border: 2px solid #095099;
+    color: #095099;
+}
+.btn-blue:hover{
+    color: #ffffff;
+    background: #095099;
+}
+/*end button*/
+
+
+
+
+
+
+
+
+

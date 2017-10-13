@@ -1,0 +1,36 @@
+/*
+.test-quadon{
+    font-family: "quadon",Georgia,serif;
+    font-weight: lighter;
+}
+.not-found{
+    font-family: "quadon",Georgia,serif;
+    font-weight: bold;
+}
+
+.distance-learning-logo-text{
+    background: #ffffff;
+    color: #005395;
+    font-family: serif;
+    font-size: 32px;
+    position: absolute;
+    top: 91px;
+    left: 114px;
+    padding: 5px;
+    min-width: 300px;
+}
+
+*/
+h1,h2,h3{
+    font-family: "quadon",Georgia,serif;
+}
+h1 .h1-content{
+    background: #8CBFD2;
+    padding-left: 10px;
+}
+/*for title content*/
+pre.center{
+    width: 60%;
+    border: #F2773F solid;
+}
+
