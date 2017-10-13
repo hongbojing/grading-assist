@@ -20,48 +20,330 @@
             .controller('switchController', switchController);
 
         function switchController($scope) {
-            $scope.data = {
-                switch1: true,
-                switch2: false,
-                switch3: false,
-                switch4: true,
-                switch5: true,
-                switch6: false
-            };
+            $scope.questionOne = {switch1: false, switch2: false, switch3: false};
+            $scope.questionTwo = {switch1: false, switch2: false, switch3: false};
+            $scope.questionThree = {switch1: false, switch2: false, switch3: false};
+            $scope.questionFour = {switch1: false, switch2: false, switch3: false};
+            $scope.questionFive = {switch1: false, switch2: false, switch3: false};
+            $scope.questionSix = {switch1: false, switch2: false, switch3: false};
+            $scope.questionSeven = {switch1: false, switch2: false, switch3: false};
+            $scope.questionEight = {switch1: false, switch2: false, switch3: false};
+            $scope.questionNine = {switch1: false, switch2: false, switch3: false};
+            $scope.questionTen = {switch1: false, switch2: false, switch3: false};
 
             $scope.message = 'false';
-            $scope.onChange = function(state) {
-                $scope.message = state;
-            };
+            $scope.totalScore = 85;
+            $scope.calculateQuestionScore = function(input) {
+                $scope.totalScore = $scope.totalScore + input;
+            }
         }
     </script>
 </head>
 
 <body ng-app="firstApplication">
     <div id="switchContainer" ng-controller="switchController as ctrl" layout="column" ng-cloak>
-        <md-switch ng-model="data.switch1" aria-label="Switch 1">
-            Switch 1: {{ data.switch1 }}
-        </md-switch>
+        <md-content class="md-padding" layout-xs="column" layout="row">
+            <div flex-xs flex-gt-xs="25" layout="column">
+                <md-card>
+                    <p class="md-display-1">Total Points: {{totalScore}}</p>
+                </md-card>
+                <!-- card for questionOne -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 1</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionOne.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionOne.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionOne.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionOne.switch1">Comment of condition one.</span>
+                            <span ng-if="questionOne.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionOne.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionTwo -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 2</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionTwo.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionTwo.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionTwo.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionTwo.switch1">Comment of condition one.</span>
+                            <span ng-if="questionTwo.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionTwo.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <!--  -->
+            <div flex-xs flex-gt-xs="25" layout="column">
+                <!-- card for questionThree -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 3</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionThree.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionThree.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionThree.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionThree.switch1">Comment of condition one.</span>
+                            <span ng-if="questionThree.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionThree.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionFour -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 4</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionFour.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionFour.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionFour.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionFour.switch1">Comment of condition one.</span>
+                            <span ng-if="questionFour.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionFour.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionFive -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 5</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionFive.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionFive.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionFive.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionFive.switch1">Comment of condition one.</span>
+                            <span ng-if="questionFive.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionFive.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </div>
 
-        <md-switch ng-model="data.switch2" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
-            Switch 2 (md-warn): {{ data.switch2 }}
-        </md-switch>
+            <div flex-xs flex-gt-xs="25" layout="column">
+                <!-- card for questionSix -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 6</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionSix.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionSix.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionSix.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionSix.switch1">Comment of condition one.</span>
+                            <span ng-if="questionSix.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionSix.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionSeven -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 7</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionSeven.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionSeven.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionSeven.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionSeven.switch1">Comment of condition one.</span>
+                            <span ng-if="questionSeven.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionSeven.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionEight -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 8</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionEight.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionEight.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionEight.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionEight.switch1">Comment of condition one.</span>
+                            <span ng-if="questionEight.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionEight.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </div>
 
-        <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
-            Switch 3 (Disabled)
-        </md-switch>
-
-        <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="data.switch4">
-            Switch 4 (Disabled, Active)
-        </md-switch>
-
-        <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.switch5">
-            Switch 5 (md-primary): No Ink
-        </md-switch>
-
-        <md-switch ng-model="data.switch6" aria-label="Switch 6" ng-change="onChange(data.switch6)">
-            Switch 6 : {{ message }}
-        </md-switch>
+            <div flex-xs flex-gt-xs="25" layout="column">
+                <!-- card for questionNine -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 9</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionNine.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionNine.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionNine.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionNine.switch1">Comment of condition one.</span>
+                            <span ng-if="questionNine.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionNine.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionTen -->
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 10</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionTen.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionTen.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionTen.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionTen.switch1">Comment of condition one.</span>
+                            <span ng-if="questionTen.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionTen.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card>
+                <!-- card for questionEleven -->
+                <!-- <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"># 11</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <md-checkbox class="md-primary" ng-model="questionEleven.switch1" aria-label="Conditions" ng-click = "calculateQuestionScore(-1)">
+                            Condition ONE: -1
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-warn" ng-model="questionEleven.switch2" aria-label="Conditions" ng-click = "calculateQuestionScore(-2)">
+                            Condition TWO: -2
+                        </md-checkbox>
+                        <br>
+                        <md-checkbox class="md-accent" ng-model="questionEleven.switch3" aria-label="Conditions" ng-click = "calculateQuestionScore(-3)">
+                            Condition Three: -3
+                        </md-checkbox>
+                        <p>
+                            <span ng-if="questionEleven.switch1">Comment of condition one.</span>
+                            <span ng-if="questionEleven.switch2">Comment of condition Two.</span>
+                            <span ng-if="questionEleven.switch3">Comment of condition Three.</span>
+                        </p>
+                    </md-card-content>
+                </md-card> -->
+            </div>
+        </md-content>
     </div>
 </body>
 
